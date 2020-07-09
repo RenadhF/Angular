@@ -1,0 +1,31 @@
+
+<div class="d-flex flex-column justify-content-center" style="height: 500px; width: 700px;">
+    
+        <div >
+            <button class="btn btn-success " (click)="onNewEmp()">Add</button>
+        </div>
+   <br>
+    <div class="mt-2" style="width: 600px;">
+            <table datatable [dtOptions]="dtOptions"  class="table table-bordered">
+                <tr>
+                    <th>Name</th>
+                    <th>age</th>
+                    <th>salary</th>
+                    <th > </th>
+                </tr>
+                <tr *ngFor="let emp of employees">
+                    <td>{{ emp.name }}</td>
+                    <td>{{ emp.age }}</td>
+                    <td>{{ emp.salary }}</td>
+                    <td> 
+                        <button class="btn p-1" (click)="editEmpData(emp)">
+                            E
+                        </button>
+                        <button class="btn p-1" (click)="deleteEmp(emp)">
+                            D
+                        </button>
+                    </td>
+                </tr>
+            </table>
+    </div>
+</div>
